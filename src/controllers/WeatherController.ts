@@ -19,11 +19,21 @@ class WeatherController {
                         wind_mph, wind_dir, pressure_mb, pressure_in, humidity, cloud }
                 } = JSON.parse(body)
 
-                return res.json({
-                    name, region, country,
-                    temp_c, temp_f, text, icon, wind_dir,
-                    wind_mph, pressure_mb, pressure_in, humidity, cloud
-                })
+                return res.json([
+                    { name: "Name", value: name },
+                    { name: "Region", value: region },
+                    { name: "Country", value: country },
+                    { name: "Temperature in Celsius", value: temp_c },
+                    { name: "Temperature in Fahrenheit", value: temp_f },
+                    { name: "Condition", value: text },
+                    { name: "Icon", value: icon },
+                    { name: "Wind direction", value: wind_dir },
+                    { name: "Wind MPH", value: wind_mph },
+                    { name: "Pressure MB", value: pressure_mb },
+                    { name: "Presure In", value: pressure_in },
+                    { name: "Humidity", value: humidity },
+                    { name: "Cloud", value: cloud },
+                ])
             }
         });
     }

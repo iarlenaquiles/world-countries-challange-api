@@ -1,12 +1,9 @@
 export default {
     origin: [
-        '*',
+        'http://localhost:4000',
     ],
     optionsSuccessStatus: 200,
-    credentials: true,
-    allowedHeaders: [
-        '*'
-    ],
+    credentials: false,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    preflightContinue: true,
+    preflightContinue: false,
 };
